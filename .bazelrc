@@ -6,3 +6,8 @@ build --ios_minimum_os=15.0
 
 # Show full errors for failures.
 build --verbose_failures
+
+# Loads the remote-execution config that `lim xcode rbe` generates under
+# .limrun/ (gitignored). try-import silently skips it when absent, so plain
+# local builds are unaffected on a fresh clone.
+try-import %workspace%/.limrun/bazelrc
