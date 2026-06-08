@@ -1,0 +1,8 @@
+# Don't litter the workspace with convenience symlinks.
+build --experimental_convenience_symlinks=ignore
+
+# Build for the iOS simulator by default; no codesigning required.
+build --ios_minimum_os=15.0
+
+# Show full errors for failures.
+build --verbose_failures

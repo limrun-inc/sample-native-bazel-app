@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "limrun-xcode-bazel": {
+      "source": "limrun-inc/skills",
+      "sourceType": "github",
+      "skillPath": "skills/limrun-xcode-bazel/SKILL.md",
+      "computedHash": "630173ad466ccd3b28fa59141e07dd09a87bb3483de1ba7ac72f933790b51478"
+    }
+  }
+}

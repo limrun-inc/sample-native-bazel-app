@@ -1,0 +1,10 @@
+load("@rules_cc//cc:objc_library.bzl", "objc_library")
+
+objc_library(
+    name = "StringUtils",
+    srcs = ["StringUtils.m"],
+    hdrs = ["include/StringUtils.h"],
+    includes = ["include"],
+    module_name = "StringUtils",
+    visibility = ["//visibility:public"],
+)

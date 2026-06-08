@@ -1,0 +1,6 @@
+/bazel-*
+/bazel-output-base
+.limrun/
+*.app.tar.gz
+.env
+.DS_Store
