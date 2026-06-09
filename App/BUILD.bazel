@@ -7,7 +7,6 @@ ios_application(
     bundle_id = "com.limrun.sample-native-bazel",
     bundle_name = "SampleNativeBazelApp",
     families = ["iphone"],
-    frameworks = ["//Core/UIComponents:UIComponents"],
     infoplists = ["Info.plist"],
     launch_storyboard = "Resources/LaunchScreen.storyboard",
     minimum_os_version = "15.0",
@@ -24,8 +23,4 @@ swift_library(
     srcs = glob(["Sources/**/*.swift"]),
     module_name = "AppLib",
     tags = ["manual"],
-    deps = [
-        "//Core/UIComponents:UIComponentsLib",
-        "//Features/Counter",
-    ],
 )

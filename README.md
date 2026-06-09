@@ -1,19 +1,13 @@
 # Sample Native Bazel App
 
-A small, multi-module **Bazel** iOS app (`rules_apple` + `rules_swift`, bzlmod,
-Bazel 9) that your coding agent can build from **any environment**, including
-Linux, using Limrun's remote build execution (RBE). No local Xcode required.
+A minimal **Bazel** iOS app (`rules_apple` + `rules_swift`, bzlmod, Bazel 9) that
+your coding agent can build from **any environment**, including Linux, using
+Limrun's remote build execution (RBE). No local Xcode required.
 
-It is deliberately non-trivial so it exercises a realistic build graph:
+It is deliberately tiny so the build is fast:
 
-- `//App:App` - the `ios_application` (SwiftUI), with an asset catalog and a
-  launch storyboard.
-- `//Core/UIComponents:UIComponents` - a dynamic `ios_framework` (Swift),
-  embedded in the app.
-- `//Core/StringUtils:StringUtils` - an Objective-C `objc_library`, imported
-  from Swift (mixed-language interop).
-- `//Features/Counter:Counter` - a Swift feature module that consumes both of
-  the above.
+- `//App:App` - a single-module `ios_application` (SwiftUI "Hello, world!") with
+  an asset catalog and a launch storyboard.
 
 ## Setup
 
@@ -48,9 +42,9 @@ which on Bazel 9 is:
 bazelisk --digest_function=sha256 build --config=limrun //App:App
 ```
 
-Run that in another shell. Apple build actions (Swift/ObjC compiles, asset
-catalog, storyboard, framework embed, bundling) execute on the remote Mac
-worker. Ctrl+C in the `lim xcode rbe` shell tears the stack down.
+Run that in another shell. Apple build actions (Swift compile, asset catalog,
+storyboard, bundling) execute on the remote Mac worker. Stop the stack with
+`lim xcode rbe --stop`.
 
 > Bazel 9 defaults to the BLAKE3 digest; the Limrun cache currently requires
 > SHA256, so `--digest_function=sha256` must come **before** `build` (it is a
