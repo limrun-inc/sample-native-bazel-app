@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct SampleNativeBazelApp: App {
+struct SpeedyCirclesApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
