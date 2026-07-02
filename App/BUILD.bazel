@@ -9,7 +9,7 @@ ios_application(
     families = ["iphone"],
     infoplists = ["Info.plist"],
     launch_storyboard = "Resources/LaunchScreen.storyboard",
-    minimum_os_version = "15.0",
+    minimum_os_version = "18.0",
     resources = glob(
         ["Resources/Assets.xcassets/**"],
         exclude = ["Resources/Assets.xcassets/AppIcon.appiconset/**"],
