@@ -164,25 +164,26 @@ struct ContentView: View {
                 Spacer()
             }
 
-            Circle()
-                .fill(circleColor)
-                .overlay(
-                    Circle()
-                        .stroke(.white.opacity(0.72), lineWidth: 4)
-                )
-                .shadow(color: circleColor.opacity(0.55), radius: 22, y: 10)
-                .frame(width: circleDiameter, height: circleDiameter)
-                .position(circlePosition)
-                .contentShape(Circle())
-                .onTapGesture {
-                    hitCircle(in: size)
-                }
-                .accessibilityLabel("Circle")
-                .accessibilityIdentifier("gameCircle")
-                .accessibilityAddTraits(.isButton)
-                .animation(.spring(response: 0.34, dampingFraction: 0.72), value: circlePosition)
-                .animation(.spring(response: 0.34, dampingFraction: 0.72), value: circleDiameter)
-                .animation(.easeInOut(duration: 0.22), value: circleColor)
+            Button {
+                hitCircle(in: size)
+            } label: {
+                Circle()
+                    .fill(circleColor)
+                    .overlay(
+                        Circle()
+                            .stroke(.white.opacity(0.72), lineWidth: 4)
+                    )
+                    .shadow(color: circleColor.opacity(0.55), radius: 22, y: 10)
+                    .frame(width: circleDiameter, height: circleDiameter)
+                    .contentShape(Circle())
+            }
+            .buttonStyle(.plain)
+            .position(circlePosition)
+            .accessibilityLabel("Circle")
+            .accessibilityIdentifier("gameCircle")
+            .animation(.spring(response: 0.34, dampingFraction: 0.72), value: circlePosition)
+            .animation(.spring(response: 0.34, dampingFraction: 0.72), value: circleDiameter)
+            .animation(.easeInOut(duration: 0.22), value: circleColor)
         }
     }
 
