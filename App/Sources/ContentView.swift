@@ -132,7 +132,6 @@ struct ContentView: View {
                     .font(.system(size: 14, weight: .semibold, design: .rounded))
                     .foregroundStyle(.white.opacity(0.72))
                     .textCase(.uppercase)
-                    .kerning(1.2)
 
                 Picker("Round timer", selection: $selectedInterval) {
                     ForEach(gameIntervals, id: \.self) { interval in
@@ -254,7 +253,6 @@ struct ContentView: View {
                         .font(.system(size: 16, weight: .semibold, design: .rounded))
                         .foregroundStyle(.white.opacity(0.68))
                         .textCase(.uppercase)
-                        .kerning(1.4)
 
                     Text("\(score)")
                         .font(.system(size: 88, weight: .black, design: .rounded))
@@ -421,7 +419,6 @@ private struct StatCard: View {
                     .font(.system(size: 12, weight: .bold, design: .rounded))
                     .foregroundStyle(.white.opacity(0.64))
                     .textCase(.uppercase)
-                    .kerning(0.8)
 
                 Text(value)
                     .font(.system(size: 24, weight: .black, design: .rounded))
