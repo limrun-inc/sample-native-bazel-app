@@ -5,7 +5,7 @@ ios_application(
     name = "App",
     app_icons = glob(["Resources/Assets.xcassets/AppIcon.appiconset/**"]),
     bundle_id = "com.limrun.sample-native-bazel",
-    bundle_name = "SampleNativeBazelApp",
+    bundle_name = "SpeedyCircles",
     families = ["iphone"],
     infoplists = ["Info.plist"],
     launch_storyboard = "Resources/LaunchScreen.storyboard",
