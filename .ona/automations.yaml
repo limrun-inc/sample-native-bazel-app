@@ -1,0 +1,20 @@
+tasks:
+  install-dependencies:
+    name: Install dependencies
+    description: Install Limrun and Bazelisk command-line tools.
+    triggeredBy:
+      - manual
+      - postDevcontainerStart
+      - prebuild
+    command: npm install --global lim @bazel/bazelisk
+
+  build:
+    name: Build app
+    description: Build the iOS app through Limrun RBE.
+    dependsOn:
+      - install-dependencies
+    triggeredBy:
+      - manual
+    command: |
+      lim xcode rbe
+      bazelisk --digest_function=sha256 build --config=limrun //App:App
